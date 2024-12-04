@@ -1,24 +1,17 @@
+// src/state.js
 const StateManager = (() => {
-  let state = []; // Private state
+  let state = []; // Initialize the state variable
 
-  const subscribers = []; // To notify components of changes
-
-  const getState = () => [...state]; // Return a copy of the state
-
-  const setState = (newState) => {
-    state = [...newState];
-    subscribers.forEach((callback) => callback(state)); // Notify all subscribers
-  };
-
-  const subscribe = (callback) => {
-    subscribers.push(callback); // Add new subscriber
-  };
-
+  // Return the state manager object with methods to get, set, and subscribe to the state
   return {
-    getState,
-    setState,
-    subscribe,
+    getState: () => state,
+    setState: (newState) => {
+      state = newState;
+    },
+    subscribe: (callback) => {
+      callback(state);
+    },
   };
 })();
 
-export default StateManager;
+export default StateManager; // Correct default export
