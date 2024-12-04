@@ -14,8 +14,6 @@ Add new projects with:
 
 ### Read:
 
-### Read:
-
 - Display all projects in a gallery grid with:
   - Card view showing image, title, category, and tools.
   - Expandable or modal details view for a full description.
@@ -33,11 +31,11 @@ Add new projects with:
 
 ## Plan of Action
 
-### Set Up State Management
+### 1. Set Up State Management
 
-### Create a StateManager to handle project data
+### 2. Create a StateManager to handle project data
 
-### Basic Components
+### 3. Basic Components
 
 - Header: Title and basic navigation (e.g., "Add Project" button).
 
@@ -47,7 +45,7 @@ Add new projects with:
 
 - Project Card: Individual project with an image, title, and delete button.
 
-### Styling
+### 4. Styling
 
 - Clean and modern layout using Tailwind CSS.
 
@@ -55,6 +53,6 @@ Add new projects with:
 
 - Hover effects on cards for a professional touch.
 
-### Deployment
+### 5. Deployment
 
 - Ensure seamless functionality and deploy to Netlify with proper settings.
