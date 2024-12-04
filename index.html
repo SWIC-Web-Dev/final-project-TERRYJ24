@@ -4,10 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- TODO: Update this! -->
     <title>Project Manager App</title>
-
     <link rel="stylesheet" href="./styles.css" />
   </head>
 
@@ -69,8 +66,11 @@
     </form>
 
     <!-- Project Container -->
-    <div id="projectContainer" class="mt-5 w-full max-w-4xl">
-      <!-- Projects will be rendered here -->
+    <div
+      id="projectContainer"
+      class="mt-5 grid w-full max-w-4xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
+    >
+      <!-- Projects will be rendered here in a grid layout -->
     </div>
 
     <script type="module" src="./src/main.js"></script>
