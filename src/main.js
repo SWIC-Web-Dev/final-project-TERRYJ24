@@ -34,21 +34,52 @@ document.getElementById("addProjectForm").addEventListener("submit", (e) => {
   renderProjects();
 });
 
-// Function to render projects in the DOM
+// Define the renderProjects function outside the submit listener
 function renderProjects() {
-  const projects = StateManager.getState();
   const projectContainer = document.getElementById("projectContainer");
-  projectContainer.innerHTML = ""; // Clear previous render
+  projectContainer.innerHTML = ""; // Clear existing projects
 
-  projects.forEach(({ title, description, imageURL }) => {
+  // Access the current state of projects
+  const projects = StateManager.getState();
+
+  projects.forEach((project) => {
+    // Create a div for each project
     const projectCard = document.createElement("div");
-    projectCard.className = "project-card";
+    projectCard.classList.add(
+      "bg-white",
+      "p-4",
+      "rounded-lg",
+      "shadow-lg",
+      "overflow-hidden",
+    );
 
-    projectCard.innerHTML = `
-            <img src="${imageURL}" alt="${title}" onerror="this.src='https://via.placeholder.com/400x300';" />
-            <h3>${title}</h3>
-            <p>${description}</p>
-        `;
+    // Add title
+    const title = document.createElement("h3");
+    title.textContent = project.title;
+    title.classList.add("text-xl", "font-bold", "text-gray-800");
+    projectCard.appendChild(title);
+
+    // Add image
+    const image = document.createElement("img");
+    image.src =
+      project.imageURL || `https://picsum.photos/seed/${project.title}/400/300`;
+    image.alt = project.title;
+    image.classList.add("w-full", "h-48", "object-cover", "rounded-lg");
+    projectCard.appendChild(image);
+
+    // Add description
+    const description = document.createElement("p");
+    description.textContent = project.description || "No description provided.";
+    description.classList.add("text-sm", "text-gray-600", "mt-2");
+    projectCard.appendChild(description);
+
+    // Add category and tools
+    const categoryAndTools = document.createElement("p");
+    categoryAndTools.textContent = `Category: ${project.category || "N/A"} | Tools: ${project.tools || "N/A"}`;
+    categoryAndTools.classList.add("text-sm", "text-gray-500", "mt-2");
+    projectCard.appendChild(categoryAndTools);
+
+    // Append the project card to the container
     projectContainer.appendChild(projectCard);
   });
 }

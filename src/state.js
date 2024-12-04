@@ -1,17 +1,15 @@
-// src/state.js
-const StateManager = (() => {
-  let state = []; // Initialize the state variable
+class StateManager {
+  static state = []; // Initialize with an empty array as the state
 
-  // Return the state manager object with methods to get, set, and subscribe to the state
-  return {
-    getState: () => state,
-    setState: (newState) => {
-      state = newState;
-    },
-    subscribe: (callback) => {
-      callback(state);
-    },
-  };
-})();
+  // Get current state
+  static getState() {
+    return this.state;
+  }
 
-export default StateManager; // Correct default export
+  // Set new state
+  static setState(newState) {
+    this.state = newState;
+  }
+}
+
+export default StateManager;
