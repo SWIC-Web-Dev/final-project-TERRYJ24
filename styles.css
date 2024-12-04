@@ -1,3 +1,45 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Tailwind-based styles */
+
+/* Body font */
+body {
+  @apply font-sans;
+}
+
+/* Header styles */
+h1 {
+  @apply mb-6; /* 1.5rem */
+}
+
+/* Button styles */
+button {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+button:hover {
+  @apply bg-blue-500;
+}
+
+/* Input and textarea styles */
+input,
+textarea {
+  @apply rounded-md;
+}
+
+/* Project card styles */
+.project-card {
+  @apply mt-5 rounded-lg bg-white p-4 shadow-lg;
+}
+
+/* Project card image styles */
+.project-card img {
+  @apply mb-4 w-full rounded-lg;
+}
+
+/* Add margin to project container to create space */
+#projectContainer {
+  @apply mt-8; /* Adds margin-top to create space between the app and the projects */
+}
