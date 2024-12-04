@@ -56,3 +56,20 @@ Add new projects with:
 ### 5. Deployment
 
 - Ensure seamless functionality and deploy to Netlify with proper settings.
+
+### New Step - Reorganize
+
+```file
+/project-manager
+/src
+/components
+Header.js
+ProjectForm.js
+ProjectCard.js
+ProjectGrid.js
+/styles
+styles.css
+/state.js
+main.js
+index.html
+```
